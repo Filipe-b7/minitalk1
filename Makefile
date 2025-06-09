@@ -27,28 +27,10 @@ $(NAME_SERVER): $(OBJS_SERVER) $(LIBFT)
 	$(CC) $(CFLAGS) $^ -L$(LIBFT_DIR) -lft -o $@
 
 $(NAME_CLIENT): $(OBJS_CLIENT) $(LIBFT)
-	$(CC) $(CFLAGS) $^ -L$(LIBFT_DIR) -lft -o $@
+	$(CC) $(CFLAGS) $^ -L$(LIBFT_DIR) -lft -o $@ 
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-clean:
-	rm -f $(OBJS_SERVER) $(OBJS_CLIENT)
-	make -C $(LIBFT_DIR) clean
-
-fclean: clean
-	rm -f $(NAME_SERVER) $(NAME_CLIENT)
-	make -C $(LIBFT_DIR) fclean
-
-re: fclean all
-
-.PHONY: all clean fclean re
-
-$(NAME_CLIENT): $(OBJS_CLIENT) $(LIBFT)
-	$(CC) $(CFLAGS) $^ -L$(LIBFT_DIR) -lft -o $@
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@ -g
 
 clean:
 	rm -f $(OBJS_SERVER) $(OBJS_CLIENT)

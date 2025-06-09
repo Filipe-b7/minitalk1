@@ -1,3 +1,7 @@
+Problems
+- check makes (relinking)
+
+
 PID-> process id
 
 Launch server first, must print its PID
